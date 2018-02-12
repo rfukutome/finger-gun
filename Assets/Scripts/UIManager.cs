@@ -5,17 +5,25 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     [SerializeField] private Text _ammoText;
+    [SerializeField] private Text _coinText;
+    [SerializeField] private Image _coinImage;
+
     public void UpdateAmmo(int argCount)
     {
         _ammoText.text = "AMMO : " + argCount;
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void SetCoinAmount(int value)
+    {
+        if (value > 0)
+        {
+            _coinText.text = "x" + value;
+            _coinImage.enabled = true;
+        }
+        else
+        {
+            _coinImage.enabled = false;
+            _coinText.text = "";
+        }
+    }
 }
