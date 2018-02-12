@@ -110,7 +110,7 @@ public class Player : MonoBehaviour {
 
     public void AddCoin(int value)
     {
-        AudioSource.PlayClipAtPoint(_coinClip, this.transform.position);
+        AudioSource.PlayClipAtPoint(_coinClip, this.transform.position, .6f);
         _coinCount += value;
         _uiManager.SetCoinAmount(_coinCount);
     }
